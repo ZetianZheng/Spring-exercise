@@ -10,8 +10,8 @@ public class Main {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("application.xml"); // 装载配置文件
-		UserService userService = context.getBean(UserService.class);
-		User user = userService.login("bob@example.com", "password");
+		UserService userService = context.getBean(UserService.class); // 找到bean
+		User user = userService.login("bob@example.com", "password"); // 正常调用
 		System.out.println(user.getName());
 	}
 }
